@@ -1,0 +1,10 @@
+.profile__edit-button-icon {
+  width: 10px;
+  object-fit: cover;
+}
+
+@media (max-width: 524px) {
+  .profile__edit-button-icon {
+    width: 7.5px;
+  }
+}

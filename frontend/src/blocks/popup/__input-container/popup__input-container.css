@@ -1,0 +1,10 @@
+.popup__input-container {
+  height: 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.popup__input-container:first-child {
+  margin-bottom: 13px;
+}

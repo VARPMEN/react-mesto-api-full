@@ -1,0 +1,24 @@
+.element__delete-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  padding: 0;
+  border: none;
+  background-color: unset;
+
+  cursor: pointer;
+  transition: opacity .4s ease-in;
+}
+
+.element__like-btn {
+  padding: 0;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  transition: opacity .4s ease-in;
+}
+
+.element__delete-btn:hover {
+  opacity: 0.5;
+}

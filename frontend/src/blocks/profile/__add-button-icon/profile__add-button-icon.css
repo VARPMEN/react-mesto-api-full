@@ -1,0 +1,10 @@
+.profile__add-button-icon {
+  width: 22px;
+  object-fit: cover;
+}
+
+@media (max-width: 524px) {
+  .profile__add-button-icon {
+    width: 16px;
+  }
+}

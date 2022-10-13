@@ -1,0 +1,26 @@
+.popup__close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+
+  border: none;
+  background-color: unset;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  cursor: pointer;
+  
+  transition: opacity .4s ease-in;
+}
+
+.popup__close-btn:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 545px) {
+  .popup__close-btn {
+    top: -36px;
+    right: 0;
+  }
+}

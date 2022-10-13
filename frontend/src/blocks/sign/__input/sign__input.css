@@ -1,0 +1,16 @@
+.sign__input {
+  color: #ccc;
+  padding: 0 0 10px 0;
+  border: unset;
+  border-bottom: 2px solid #ccc;
+  background-color: unset;
+  width: 100%;
+}
+
+.sign__input:focus {
+  outline: unset;
+}
+
+.sign__input:last-child {
+  margin-top: 30px;
+}

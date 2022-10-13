@@ -1,0 +1,13 @@
+.sign__signup {
+  margin: 0 0 80px 0;
+  text-align: center;
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.21;
+  cursor: pointer;
+  transition: opacity 0.4s ease-in;
+}
+
+.sign__signup:hover {
+  opacity: 0.6;
+}
