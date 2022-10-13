@@ -28,7 +28,7 @@ function ImagePopup({ card, onClose }) {
           />
         </button>
         <figcaption>
-          <p className="fullscreen-image__caption">{card?.name}</p>
+          <p className="fullscreen-image__caption">{card && card.name}</p>
         </figcaption>
       </figure>
     </section>
