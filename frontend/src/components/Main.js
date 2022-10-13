@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import Card from "./Card";
 import editBtnIcon from "../images/edit-button-icon.svg";
 import addBtnIcon from "../images/add-button-icon.svg";
