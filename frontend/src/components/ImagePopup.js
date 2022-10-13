@@ -11,8 +11,8 @@ function ImagePopup({ card, onClose }) {
     >
       <figure className="fullscreen-image">
         <img
-          src={card?.link}
-          alt={card?.name}
+          src={card && card.link}
+          alt={card && card.name}
           className="fullscreen-image__picture"
         />
         <button
