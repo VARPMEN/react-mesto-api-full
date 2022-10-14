@@ -24,24 +24,6 @@ export const authorize = (password, email) => {
     body: JSON.stringify({ password, email }),
   })
     .then(handleResponse);
-    // .then((data) => {
-    //   console.log
-    //   if (data.token) {
-    //     localStorage.setItem("jwt", data.token);
-
-    //     return data.token;
-    //   }
-    // });
-};
-
-export const checkToken = () => {
-  return fetch(`${BASE_URL}/users/me`, {
-    method: "GET",
-    credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then(handleResponse);
 };
 
 export const logOut = () => {

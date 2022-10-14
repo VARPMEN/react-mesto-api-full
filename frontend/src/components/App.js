@@ -48,13 +48,11 @@ function App() {
   function handleLogin(password, email) {
     auth
       .authorize(password, email)
-      .then((token) => {
-        auth.checkToken(token).then((res) => {
-          setEmail(res.email);
+      .then((data) => {
+        if (data.message === 'Токен создан')
           setLoggedIn(true);
           history.push("/");
-        });
-      })
+        })
       .catch((err) => console.log(err));
   }
 
