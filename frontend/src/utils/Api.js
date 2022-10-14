@@ -15,6 +15,7 @@ class Api {
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
       method: "GET",
+      credentials: "include",
       headers: {
         authorization: `${this._headers.authorization}`,
       },
@@ -24,6 +25,7 @@ class Api {
   getUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "GET",
+      credentials: "include",
       headers: {
         authorization: `${this._headers.authorization}`,
       },
@@ -33,6 +35,7 @@ class Api {
   setUserInfo(obj) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
+      credentials: "include",
       headers: this._headers,
       body: JSON.stringify({
         name: obj.name,
@@ -44,6 +47,7 @@ class Api {
   setNewCard(obj) {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
+      credentials: "include",
       headers: this._headers,
       body: JSON.stringify({
         name: obj.name,
@@ -55,6 +59,7 @@ class Api {
   removeCard(idCard) {
     return fetch(`${this._baseUrl}/cards/${idCard}`, {
       method: "DELETE",
+      credentials: "include",
       headers: this._headers,
     }).then(this._checkResult);
   }
@@ -62,6 +67,7 @@ class Api {
   changeLikeCardStatus(idCard, isLiked) {
     return fetch(`${this._baseUrl}/cards/${idCard}/likes`, {
       method: `${isLiked ? "PUT" : "DELETE"}`,
+      credentials: "include",
       headers: this._headers,
     }).then(this._checkResult);
   }
@@ -69,6 +75,7 @@ class Api {
   setUserAvatar(obj) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
+      credentials: "include",
       headers: this._headers,
       body: JSON.stringify({
         avatar: obj.avatar,
@@ -79,6 +86,7 @@ class Api {
 
 const api = new Api({
   baseUrl: "https://api.mesto.prokhorov.nomoredomains.icu",
+  credentials: "include",
   headers: {
     authorization: "e243774a-b776-426b-a71e-7cfaf249471c",
     "Content-Type": "application/json",
