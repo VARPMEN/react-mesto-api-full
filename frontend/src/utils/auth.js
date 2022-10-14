@@ -34,16 +34,15 @@ export const authorize = (password, email) => {
     // });
 };
 
-// export const checkToken = (token) => {
-//   return fetch(`${BASE_URL}/users/me`, {
-//     method: "GET",
-//     credentials: "include",
-//     headers: {
-//       "Content-Type": "application/json",
-//       Authorization: `Bearer ${token}`,
-//     },
-//   }).then(handleResponse);
-// };
+export const checkToken = () => {
+  return fetch(`${BASE_URL}/users/me`, {
+    method: "GET",
+    credentials: "include",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then(handleResponse);
+};
 
 export const logOut = () => {
   return fetch(`${BASE_URL}/logout`, {
