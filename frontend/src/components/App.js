@@ -59,8 +59,10 @@ function App() {
   }
 
   useEffect(() => {
+    if (currentUser !== {}) {
     tokenCheck();
-  }, []);
+    }
+  }, [currentUser]);
 
   function tokenCheck() {
     auth
