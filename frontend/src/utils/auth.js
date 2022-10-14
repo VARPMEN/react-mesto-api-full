@@ -51,5 +51,5 @@ export const logOut = () => {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then(handleResponse);
+  });
 };
