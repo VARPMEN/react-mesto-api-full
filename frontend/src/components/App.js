@@ -33,7 +33,7 @@ function App() {
     auth
       .register(password, email)
       .then((res) => {
-        setEmail(res.data.email);
+        setEmail(res.email);
         setIsSuccess(true);
         history.push("/sign-in");
       })
@@ -50,7 +50,7 @@ function App() {
       .authorize(password, email)
       .then((token) => {
         auth.checkToken(token).then((res) => {
-          setEmail(res.data.email);
+          setEmail(res.email);
           setLoggedIn(true);
           history.push("/");
         });
@@ -71,7 +71,7 @@ function App() {
         .then((res) => {
           if (res) {
             setLoggedIn(true);
-            setEmail(res.data.email);
+            setEmail(res.email);
             history.push("/");
           }
         })
