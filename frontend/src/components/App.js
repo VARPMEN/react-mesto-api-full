@@ -48,30 +48,32 @@ function App() {
   function handleLogin(password, email) {
     auth
       .authorize(password, email)
-      .then((data) => {
-        if (data.message === 'Токен создан')
+      .then((token) => {
+        auth.checkToken(token).then((res) => {
+          setEmail(res.email);
           setLoggedIn(true);
           history.push("/");
-        })
+        });
+      })
       .catch((err) => console.log(err));
   }
 
-  // useEffect(() => {
-  //   tokenCheck();
-  // }, []);
+  useEffect(() => {
+    tokenCheck();
+  }, []);
 
-  // function tokenCheck() {
-  //   auth
-  //     .checkToken()
-  //     .then((res) => {
-  //       if (res) {
-  //         setLoggedIn(true);
-  //         setEmail(res.email);
-  //         history.push("/");
-  //        }
-  //     })
-  //     .catch((err) => console.log(err));
-  // }
+  function tokenCheck() {
+    auth
+      .checkToken()
+      .then((res) => {
+        if (res) {
+          setLoggedIn(true);
+          setEmail(res.email);
+          history.push("/");
+         }
+      })
+      .catch((err) => console.log(err));
+  }
 
   function handleExitClick() {
     auth.logOut();

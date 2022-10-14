@@ -121,7 +121,7 @@ const changeAvatar = (req, res, next) => {
 };
 
 const logOut = (req, res) => {
-  res.clearCookie('jwt').send();
+  res.clearCookie('jwt', { sameSite: 'none', secure: true }).send();
 };
 
 module.exports = {
