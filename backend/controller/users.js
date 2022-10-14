@@ -78,9 +78,7 @@ const loginUser = (req, res, next) => {
           }
 
           const token = jwt.sign({ _id: user.id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
-          return res.cookie('jwt', token, {
-            maxAge: 3600000 * 24 * 7, httpOnly: true, sameSite: 'lax', domain: 'mesto.student.prokhorov.nomoredomains.icu',
-          }).send({ message: 'Токен создан' });
+          return res.cookie('jwt', token, { maxAge: 3600000 * 24 * 7, httpOnly: true, sameSite: 'lax' }).send({ message: 'Токен создан' });
         });
     })
     .catch(next);
