@@ -85,22 +85,26 @@ function App() {
   }
 
   useEffect(() => {
+    if (loggedIn) {
     api
       .getInitialCards()
       .then((data) => {
         setCards(data);
       })
       .catch((res) => console.log(res));
-  }, []);
+    }
+  }, [loggedIn]);
 
   useEffect(() => {
+    if (loggedIn) {
     api
       .getUserInfo()
       .then((item) => {
         setCurrentUser(item);
       })
       .catch((res) => console.log(res.status));
-  }, []);
+    }
+  }, [loggedIn]);
 
   function handleCardClick(card) {
     const isLiked = card.likes.some((i) => i._id === currentUser._id);
