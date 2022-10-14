@@ -18,11 +18,12 @@ const { PORT = 3000 } = process.env;
 const app = express();
 
 const allowedCors = [
-  'http://mesto.student.prokhorov.nomoredomains.icu',
-  'http://api.mesto.prokhorov.nomoredomains.icu',
+  'https://mesto.student.prokhorov.nomoredomains.icu',
+  'https://api.mesto.prokhorov.nomoredomains.icu',
   'localhost:3000',
 ];
 
+// eslint-disable-next-line consistent-return
 app.use((req, res, next) => {
   const { origin } = req.headers;
   const { method } = req;
@@ -37,7 +38,7 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', requestHeaders);
     return res.status(200).send();
   }
-  return next();
+  next();
 });
 
 app.use(bodyParser.json());
