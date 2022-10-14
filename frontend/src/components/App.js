@@ -58,22 +58,22 @@ function App() {
       .catch((err) => console.log(err));
   }
 
-  useEffect(() => {
-    tokenCheck();
-  }, []);
+  // useEffect(() => {
+  //   tokenCheck();
+  // }, []);
 
-  function tokenCheck() {
-    auth
-      .checkToken()
-      .then((res) => {
-        if (res) {
-          setLoggedIn(true);
-          setEmail(res.email);
-          history.push("/");
-         }
-      })
-      .catch((err) => console.log(err));
-  }
+  // function tokenCheck() {
+  //   auth
+  //     .checkToken()
+  //     .then((res) => {
+  //       if (res) {
+  //         setLoggedIn(true);
+  //         setEmail(res.email);
+  //         history.push("/");
+  //        }
+  //     })
+  //     .catch((err) => console.log(err));
+  // }
 
   function handleExitClick() {
     auth.logOut();
