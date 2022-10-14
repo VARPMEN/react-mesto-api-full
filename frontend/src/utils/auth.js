@@ -43,3 +43,13 @@ export const checkToken = (token) => {
     },
   }).then(handleResponse);
 };
+
+export const logOut = () => {
+  return fetch(`${BASE_URL}/logout`, {
+    method: "POST",
+    credentials: "include",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then(handleResponse);
+};

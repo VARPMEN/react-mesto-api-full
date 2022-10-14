@@ -11,7 +11,7 @@ const userRoute = require('./routes/users');
 const cardRoute = require('./routes/cards');
 const auth = require('./middlewares/auth');
 const UnfindError = require('./errors/UnfindError');
-const { loginUser, createUser } = require('./controller/users');
+const { loginUser, createUser, logOut } = require('./controller/users');
 
 const { PORT = 3000 } = process.env;
 
@@ -52,6 +52,8 @@ app.use(requestLogger);
 
 app.post('/signin', loginValidation, loginUser);
 app.post('/signup', userValidation, createUser);
+
+app.post('/logout', logOut);
 
 app.use(auth);
 

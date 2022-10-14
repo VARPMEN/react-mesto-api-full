@@ -63,25 +63,24 @@ function App() {
   }, []);
 
   function tokenCheck() {
-    const jwt = localStorage.getItem("jwt");
-
-    if (jwt) {
-      auth
-        .checkToken(jwt)
-        .then((res) => {
-          if (res) {
-            setLoggedIn(true);
-            setEmail(res.email);
-            history.push("/");
-          }
-        })
-        .catch((err) => console.log(err));
-    }
+    auth
+      .checkToken()
+      .then((res) => {
+        if (res) {
+          setLoggedIn(true);
+          setEmail(res.email);
+          history.push("/");
+         }
+      })
+      .catch((err) => console.log(err));
   }
 
   function handleExitClick() {
+    auth.logOut();
     setLoggedIn(false);
-    localStorage.removeItem("jwt");
+    setCards([]);
+    setCurrentUser({});
+    history.push('/signin');
   }
 
   useEffect(() => {

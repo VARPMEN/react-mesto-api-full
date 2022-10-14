@@ -118,6 +118,10 @@ const changeAvatar = (req, res, next) => {
     });
 };
 
+const logOut = (req, res) => {
+  res.clearCookie('jwt').send();
+};
+
 module.exports = {
-  getUsers, getUser, createUser, changeInfo, changeAvatar, loginUser, getMe,
+  getUsers, getUser, createUser, changeInfo, changeAvatar, loginUser, getMe, logOut,
 };
