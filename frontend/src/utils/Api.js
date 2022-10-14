@@ -85,7 +85,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: "https://api.mesto.prokhorov.nomoredomains.icu",
+  baseUrl: "http://api.mesto.prokhorov.nomoredomains.icu",
   credentials: "include",
   headers: {
     authorization: "e243774a-b776-426b-a71e-7cfaf249471c",
