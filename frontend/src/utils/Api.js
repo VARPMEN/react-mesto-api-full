@@ -16,9 +16,7 @@ class Api {
     return fetch(`${this._baseUrl}/cards`, {
       method: "GET",
       credentials: "include",
-      headers: {
-        authorization: `${this._headers.authorization}`,
-      },
+      headers: this._headers,
     }).then(this._checkResult);
   }
 
@@ -26,9 +24,7 @@ class Api {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "GET",
       credentials: "include",
-      headers: {
-        authorization: `${this._headers.authorization}`,
-      },
+      headers: this._headers,
     }).then(this._checkResult);
   }
 
@@ -88,7 +84,6 @@ const api = new Api({
   baseUrl: "http://api.mesto.prokhorov.nomoredomains.icu",
   credentials: "include",
   headers: {
-    authorization: "e243774a-b776-426b-a71e-7cfaf249471c",
     "Content-Type": "application/json",
   },
 });
