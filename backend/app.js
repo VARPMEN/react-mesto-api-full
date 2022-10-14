@@ -18,8 +18,8 @@ const { PORT = 3000 } = process.env;
 const app = express();
 
 const allowedCors = [
+  'hhtp://mesto.student.prokhorov.nomoredomains.icu',
   'https://mesto.student.prokhorov.nomoredomains.icu',
-  'https://api.mesto.prokhorov.nomoredomains.icu',
   'localhost:3000',
 ];
 
@@ -49,6 +49,12 @@ app.use(helmet());
 app.use(cookieParser());
 
 app.use(requestLogger);
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 app.post('/signin', loginValidation, loginUser);
 app.post('/signup', userValidation, createUser);
