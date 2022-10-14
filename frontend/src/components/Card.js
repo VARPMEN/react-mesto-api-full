@@ -17,12 +17,12 @@ const Card = ({ card, onCardClick, onCardLike, onCardDelete }) => {
 
   const currentUser = useContext(CurrentUserContext);
 
-  const isOwn = card.owner._id !== currentUser._id;
+  const isOwn = card.owner !== currentUser._id;
   const cardDeleteBtnClass = `element__delete-btn ${
     isOwn && "element__delete-btn_inactive"
   }`;
 
-  const isLiked = card.likes.some((i) => i._id === currentUser._id);
+  const isLiked = card.likes.some((i) => i === currentUser._id);
   const likeDeleteBtnClass = `element__like-btn ${
     isLiked && "element__like-btn_active"
   }`;
